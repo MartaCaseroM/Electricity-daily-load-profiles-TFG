@@ -1,0 +1,43 @@
+function PlotsEvolucionVarianzaPorHoraTodosDatosDestacandoRangoHoras(gruposConstelaciones,ttp24h,infomat,K,nomInputVars,nomSerie,horamin,horamax)
+    primerYear = ttp24h.FECHA.Year(1,:);
+    ultimoYear = ttp24h.FECHA.Year(end,:);  
+   
+
+    
+    MatVarHorasConst=[];
+    for j=primerYear:ultimoYear    
+        
+        dias=find(ttp24h.FECHA.Year == j);
+        YearDias= ttp24h(dias,:);
+        mYearDias = YearDias{:,1:end};
+        for hora=0:23        
+            mHora = mYearDias(:,hora+1);
+            MatVarHorasConst(j-primerYear+1,hora+1)=var(mHora);
+        end
+    end
+    
+    figure;
+    b=bar([primerYear:ultimoYear],MatVarHorasConst,'stacked','FaceColor',[0.631, 0.631, 0.631]);
+    for hora=minhora:maxhora
+        b(1,hora+1).FaceColor = [1,0,0];
+    end
+    legend('hora0','hora1','hora2','hora3','hora4','hora5','hora6','hora7','hora8','hora9','hora10','hora11','hora12','hora13','hora14','hora15','hora16','hora17','hora18','hora19','hora20','hora21','hora22','hora23');
+    ylabel('Variabilidad');
+    title(sprintf('Tarifa %s',nomSerie));
+
+    figure;
+    hold on;
+    for j=1:24
+        if j>=minhora && j<=maxhora
+            plot([primerYear:ultimoYear],MatVarHorasConst(:,j),'Linewidth',3);
+        else
+            plot([primerYear:ultimoYear],MatVarHorasConst(:,j));
+        end
+    end
+    legend('hora0','hora1','hora2','hora3','hora4','hora5','hora6','hora7','hora8','hora9','hora10','hora11','hora12','hora13','hora14','hora15','hora16','hora17','hora18','hora19','hora20','hora21','hora22','hora23');
+    axis tight;
+    ylabel('Variabilidad');
+    xticks([primerYear:ultimoYear]);
+    xticklabels([primerYear:ultimoYear]);
+    title(sprintf('Tarifa %s',nomSerie));
+end
