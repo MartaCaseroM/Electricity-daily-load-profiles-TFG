@@ -88,7 +88,7 @@ frequency and variance of that typical profile and the constellation it is part 
 
 ![Time evolution graph](IMAGES/Figure1.png)
 
-> *Figure 1. Time evolution of typical load profiles classified by seasons.*
+> *Figure 1. Time evolution of typical load profiles classified by seasons from the electricity rate 6.1A, showing the label of the profile id8-2018.*
 ---
 
 ## 4. Results
