@@ -86,7 +86,7 @@ Also, all typical profiles are labelled in the graph, giving information regardi
 frequency and variance of that typical profile and the constellation it is part of.
 
 
-![Time evolution graph](IMAGES/figure1.png)
+![Time evolution graph](IMAGES/Figure1.png)
 
 > *Figure 1. Time evolution of typical load profiles classified by seasons.*
 ---
@@ -101,7 +101,7 @@ many new profiles have appeared or some constellations have disappeared. The
 economic crisis of 2007 and the coronavirus pandemic have strongly contributed in the
 creation of new electric consumption trends.
 
-![Time evolution graph](IMAGES/figure2.png)
+![Time evolution graph](IMAGES/Figure2.png)
 
 > *Figure 2. Time evolution of typical load profiles classified by day of the week for electricity rate P48.*
 
